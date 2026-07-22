@@ -1,0 +1,95 @@
+/* ══════════════════════════════════════════════════════════════
+   Craft2Done — МОБИЛЬНЫЕ СТИЛИ
+   ──────────────────────────────────────────────────────────────
+   Файл подключается в index.html так:
+
+     <link rel="stylesheet" href="mobile.css" media="(max-width:900px)">
+
+   Атрибут media означает: браузер применяет эти правила ТОЛЬКО
+   на экранах до 900px. На десктопе файл не действует вообще,
+   поэтому здесь можно менять что угодно — ПК не затронет.
+
+   Правило: любые мобильные правки делаются здесь и только здесь.
+   index.html для мобильной вёрстки не открывается.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ───── контейнер и общие отступы ───── */
+.wrap{padding:0 18px}
+.sec{padding:62px 0}
+
+/* ───── шапка ───── */
+.hdr{height:60px}
+.logo{font-size:20px}
+
+/* ───── первый экран ───── */
+.hero{padding:104px 0 64px;min-height:auto}
+.hero h1{font-size:clamp(36px,10.5vw,60px);line-height:.98}
+.hero h1 .ln2{padding-left:0}
+.hero-sub h2{font-size:19px}
+.hero-sub p{font-size:14px;max-width:none}
+.hero-btns{flex-direction:column;align-items:stretch;gap:10px}
+.hero-btns .btn,#hb2{width:100%;justify-content:center;text-align:center}
+.hero-cue{display:none}
+.hero-meta{gap:14px;margin-top:34px}
+/* 3D-робот скрыт уже на 1100px — правило живёт в index.html */
+
+/* ───── услуги: свайп-карусель вместо залипающего скролла ─────
+   (залипающий механизм .pm-pin сам отключается при ширине ≤1020px) */
+.rail{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;cursor:default}
+.sc{flex:0 0 82vw;min-height:0;scroll-snap-align:start;padding:22px 18px}
+.rail-head{flex-direction:column;align-items:flex-start;gap:16px}
+.rail-nav{align-self:flex-end}
+.rail-btn{width:46px;height:46px}
+
+/* ───── процесс ───── */
+.proc-num{font-size:72px;-webkit-text-stroke-width:1.1px}
+.proc-cur h3{font-size:26px}
+.proc-cur p{font-size:14px;max-width:none}
+.pstep{min-height:0;padding:24px 18px}
+.pstep h4{font-size:20px}
+
+/* ───── кейсы ───── */
+.cg{grid-template-columns:1fr}
+.cc{padding:22px 18px}
+.cc-m{gap:22px}
+
+/* ───── форматы ───── */
+.fg{grid-template-columns:1fr}
+.fc{min-height:0;padding:24px 20px}
+
+/* ───── бегущая строка ───── */
+.mq-sec{padding:56px 0}
+.mq-track span{font-size:28px;padding:0 20px}
+
+/* ───── CTA ───── */
+.cta{padding:88px 0}
+.cta-btns{margin-top:36px}
+.cta-big{width:100%;justify-content:center;padding:16px 28px;font-size:15px}
+
+/* ───── контакты и футер ───── */
+.co-strip{grid-template-columns:1fr}
+.ft-cells{grid-template-columns:1fr}
+.ft-cell{padding:30px 18px}
+.ft-mark{font-size:44px;padding-top:36px;margin-bottom:24px}
+.ftbot{flex-direction:column;align-items:flex-start;gap:8px}
+
+/* ───── модальные окна ───── */
+.mbox,.fbox{max-height:92vh}
+.mhd{padding:22px 18px 16px}
+.mbd{padding:18px 18px 22px;gap:14px}
+.mnum{gap:18px;padding:12px 14px}
+.mfg{grid-template-columns:1fr}
+
+/* ───── производительность: облегчаем фоновые пятна ───── */
+.pm-blob{opacity:.28!important;filter:blur(42px)!important}
+
+/* ══════════════════════════════════════════════════════════════
+   УЗКИЕ ЭКРАНЫ (≤520px) — маленькие телефоны
+   ══════════════════════════════════════════════════════════════ */
+@media(max-width:520px){
+  .h-display{font-size:clamp(28px,8.6vw,42px)}
+  .h1{font-size:clamp(25px,7vw,32px)}
+  .sc{flex:0 0 88vw}
+  .mq-track span{font-size:24px;padding:0 16px}
+  .ft-mark{font-size:36px}
+}
