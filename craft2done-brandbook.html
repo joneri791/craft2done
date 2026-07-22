@@ -88,14 +88,53 @@ code{font-family:ui-monospace,monospace;font-size:12px;color:var(--lav)}
 .prop{display:flex;height:46px;border-radius:8px;overflow:hidden;border:1px solid var(--line2)}
 .prop div{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:rgba(255,255,255,.7)}
 footer{padding:52px 0 70px;color:var(--t4);font-size:13px}
+
+/* ── варианты лого и соцсети ── */
+.lk b{display:block;font-size:13.5px;margin-top:12px}
+.lk i{display:block;font-style:normal;font-size:12px;color:var(--t3);margin-top:5px;line-height:1.5}
+.lk-box{border:1px solid var(--line2);border-radius:12px;background:var(--s1);min-height:132px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;text-align:center}
+.lk-word{font-size:30px;font-weight:900;letter-spacing:-.03em;line-height:1;color:#fff}
+.lk-word em{font-style:normal;color:var(--p)}
+.lk-stack{font-size:28px;font-weight:900;letter-spacing:-.03em;line-height:.88;color:#fff;text-align:left}
+.lk-stack span{display:block}
+.lk-stack em{font-style:normal;color:var(--p)}
+.lk-mark{font-size:62px;font-weight:900;color:var(--p);line-height:1;letter-spacing:-.04em}
+.lk-tag{font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)}
+
+.ava{width:88px;height:88px;border-radius:50%;background:var(--p);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:900;letter-spacing:-.04em}
+.ava.inv{background:var(--paper);color:var(--p)}
+
+.cover{width:100%;aspect-ratio:3/1;border-radius:8px;position:relative;overflow:hidden;
+  background:radial-gradient(120% 150% at 8% 110%, rgba(161,0,255,.55), rgba(0,0,0,0) 60%), #000;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.cover-w{font-size:23px;font-weight:900;letter-spacing:-.03em;color:#fff}
+.cover-w em{font-style:normal;color:var(--p)}
+.cover-s{font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)}
+
+.post{aspect-ratio:1;border:1px solid var(--line2);border-radius:12px;padding:20px;
+  background:radial-gradient(110% 130% at 90% 5%, rgba(161,0,255,.3), rgba(0,0,0,0) 58%), var(--s1);
+  display:flex;flex-direction:column}
+.post-k{font-size:9.5px;font-weight:700;letter-spacing:.2em;color:var(--p)}
+.post-num{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1;margin-top:auto;
+  font-variant-numeric:tabular-nums;color:#fff}
+.post-num small{font-size:26px;color:var(--lav)}
+.post-t{font-size:12.5px;color:var(--t2);margin-top:6px;line-height:1.4}
+.post-h{font-size:20px;font-weight:800;letter-spacing:-.025em;line-height:1.12;margin-top:auto;color:#fff}
+.post-l{width:36px;height:4px;background:var(--p);margin-top:12px}
+.post-o{font-size:76px;font-weight:800;letter-spacing:-.04em;line-height:.9;margin-top:12px;
+  color:transparent;-webkit-text-stroke:1.4px rgba(161,0,255,.9);paint-order:stroke fill}
+.post-f{font-size:11px;font-weight:900;letter-spacing:-.02em;color:var(--t3);margin-top:14px}
+.post-f em{font-style:normal;color:var(--p)}
 </style>
 </head>
 <body>
 
 <nav class="tocbar"><div class="wrap">
-  <a href="#idea">Идея</a><a href="#logo">Логотип</a><a href="#color">Цвет</a><a href="#type">Типографика</a>
+  <a href="#idea">Идея</a><a href="#logo">Логотип</a><a href="#lockups">Варианты лого</a><a href="#color">Цвет</a><a href="#type">Типографика</a>
   <a href="#layout">Сетка</a><a href="#ui">Компоненты</a><a href="#graphics">Графика</a>
-  <a href="#motion">Анимация</a><a href="#voice">Тон</a><a href="#apply">Носители</a><a href="#tech">Техничка</a>
+  <a href="#motion">Анимация</a><a href="#voice">Тон</a><a href="#social">Соцсети</a><a href="#apply">Носители</a><a href="#tech">Техничка</a>
 </div></nav>
 
 <div class="wrap">
@@ -163,6 +202,74 @@ footer{padding:52px 0 70px;color:var(--t4);font-size:13px}
       <li>Ставить на пёстрый фон без подложки</li>
       <li>Писать с заглавной в интерфейсе — «Craft2Done» только в текстах и документах</li>
     </ul></div>
+  </div>
+</section>
+
+<!-- ВАРИАНТЫ ЛОГО -->
+<section id="lockups">
+  <div class="eyebrow">01.1 · Варианты логотипа</div>
+  <h2>Локапы</h2>
+  <p class="lead">Один знак в шести формах — под разную ширину, носитель и размер. Выбор всегда по месту: чем меньше площадь, тем короче форма. Ниже каждого варианта указано, где он применяется.</p>
+
+  <div class="grid g3">
+
+    <div class="lk">
+      <div class="lk-box"><div class="lk-word">craft<em>2</em>done</div></div>
+      <b>1 · Основной, горизонтальный</b>
+      <i>Шапка сайта, презентации, документы. Форма по умолчанию — если сомневаетесь, берите её.</i>
+    </div>
+
+    <div class="lk">
+      <div class="lk-box"><div class="lk-stack"><span>craft<em>2</em></span><span>done</span></div></div>
+      <b>2 · Вертикальный</b>
+      <i>Узкие форматы: сторис, баннер-колонка, вертикальная вывеска. Строки выключены влево, интерлиньяж 0.88.</i>
+    </div>
+
+    <div class="lk">
+      <div class="lk-box"><div class="lk-mark">2</div></div>
+      <b>3 · Знак «2»</b>
+      <i>Минимальная форма: фавикон, аватар, печать, мерч. Работает от 16px. Никогда не ставится рядом с полным вордмарком.</i>
+    </div>
+
+    <div class="lk">
+      <div class="lk-box"><div class="lk-word" style="font-size:26px">craft<em>2</em>done</div><div class="lk-tag">digital до результата</div></div>
+      <b>4 · С дескриптором</b>
+      <i>Первое касание: визитка, титул презентации, подпись в письме. Дескриптор — 11px, трекинг +0.22em, цвет 50% белого.</i>
+    </div>
+
+    <div class="lk">
+      <div class="lk-box" style="background:var(--paper)"><div class="lk-word" style="color:#111">craft<em style="color:var(--p)">2</em>done</div></div>
+      <b>5 · Инверсия</b>
+      <i>Светлые носители: печать, КП, документы. «2» остаётся фиолетовой — это единственный цветной элемент.</i>
+    </div>
+
+    <div class="lk">
+      <div class="lk-box"><div class="lk-word" style="color:#fff">craft<em style="color:#fff">2</em>done</div></div>
+      <b>6 · Монохром</b>
+      <i>Одноцветная печать, тиснение, гравировка, партнёрские стены логотипов. Когда фиолетовый недоступен технически.</i>
+    </div>
+
+  </div>
+
+  <h3>Как выбрать</h3>
+  <div class="card">
+    <table>
+      <tr><th>Ситуация</th><th>Вариант</th></tr>
+      <tr><td>Ширина места больше 120px</td><td>1 — горизонтальный</td></tr>
+      <tr><td>Место выше, чем шире</td><td>2 — вертикальный</td></tr>
+      <tr><td>Квадрат меньше 64px</td><td>3 — знак «2»</td></tr>
+      <tr><td>Аудитория видит бренд впервые</td><td>4 — с дескриптором</td></tr>
+      <tr><td>Светлый фон или печать</td><td>5 — инверсия</td></tr>
+      <tr><td>Один цвет по технологии</td><td>6 — монохром</td></tr>
+    </table>
+  </div>
+
+  <h3>Минимальные размеры</h3>
+  <div class="card">
+    <div class="spec"><span class="k">Горизонтальный</span><span class="v">от 96px на экране / 24 мм в печати</span></div>
+    <div class="spec"><span class="k">Вертикальный</span><span class="v">от 64px / 18 мм</span></div>
+    <div class="spec"><span class="k">Знак «2»</span><span class="v">от 16px / 6 мм</span></div>
+    <div class="spec"><span class="k">С дескриптором</span><span class="v">от 140px / 32 мм — ниже дескриптор не читается, берите вариант 1</span></div>
   </div>
 </section>
 
@@ -455,6 +562,100 @@ footer{padding:52px 0 70px;color:var(--t4);font-size:13px}
     <div class="spec"><span class="k">После отправки</span><span class="v">«Заявка ушла. Ответим в течение рабочего дня»</span></div>
     <div class="spec"><span class="k">Ошибка поля</span><span class="v">«Проверьте номер — не хватает цифр»</span></div>
     <div class="spec"><span class="k">Пустое состояние</span><span class="v">«Пока пусто. Здесь появятся кейсы по этому направлению»</span></div>
+  </div>
+</section>
+
+<!-- СОЦСЕТИ -->
+<section id="social">
+  <div class="eyebrow">08.1 · Соцсети</div>
+  <h2>Карточки и посты</h2>
+  <p class="lead">Пять шаблонов на все регулярные форматы. Правило одно: один экран — одна мысль. Если на макете больше одного тезиса, его надо делить на два.</p>
+
+  <h3>Аватар и обложка</h3>
+  <div class="grid g3">
+    <div class="lk">
+      <div class="lk-box" style="padding:22px"><div class="ava">2</div></div>
+      <b>Аватар</b>
+      <i>Знак «2» белым на фиолетовом. Круг или скругление платформы. Один вариант на все площадки — так бренд узнают в ленте.</i>
+    </div>
+    <div class="lk">
+      <div class="lk-box" style="padding:22px"><div class="ava inv">2</div></div>
+      <b>Аватар, инверсия</b>
+      <i>Фиолетовая «2» на белом. Для площадок с тёмным интерфейсом, где фиолетовый круг сливается с фоном.</i>
+    </div>
+    <div class="lk">
+      <div class="lk-box" style="padding:16px"><div class="cover"><span class="cover-w">craft<em>2</em>done</span><span class="cover-s">digital до результата</span></div></div>
+      <b>Обложка сообщества</b>
+      <i>Вордмарк по центру, дескриптор под ним, фиолетовое свечение из левого нижнего угла. Без фото и без коллажей.</i>
+    </div>
+  </div>
+
+  <h3>Форматы постов</h3>
+  <div class="grid g3">
+
+    <div class="lk">
+      <div class="post">
+        <span class="post-k">// КЕЙС</span>
+        <div class="post-num">+214<small>%</small></div>
+        <div class="post-t">оплат за 6 месяцев</div>
+        <div class="post-f">craft<em>2</em>done</div>
+      </div>
+      <b>A · Цифра</b>
+      <i>Результат кейса. Метрика — главный объект, занимает не меньше трети высоты. Подпись под ней одной строкой.</i>
+    </div>
+
+    <div class="lk">
+      <div class="post">
+        <span class="post-k">// РАЗБОР</span>
+        <div class="post-h">Почему заявки есть,<br>а продаж нет</div>
+        <div class="post-l"></div>
+        <div class="post-f">craft<em>2</em>done</div>
+      </div>
+      <b>B · Тезис</b>
+      <i>Экспертный пост, анонс статьи. Заголовок 2–3 строки, вес 800, отрицательный трекинг. Фиолетовая черта — точка опоры.</i>
+    </div>
+
+    <div class="lk">
+      <div class="post">
+        <span class="post-k">// ЭТАП 03</span>
+        <div class="post-o">03</div>
+        <div class="post-t" style="margin-top:auto">Запуск и первые<br>гипотезы</div>
+        <div class="post-f">craft<em>2</em>done</div>
+      </div>
+      <b>C · Шаг процесса</b>
+      <i>Карусель из 5 слайдов по этапам работы. Контурная цифра — тот же приём, что на сайте: <code>paint-order: stroke fill</code>.</i>
+    </div>
+
+  </div>
+
+  <h3>Правила оформления</h3>
+  <div class="grid g2">
+    <div class="card do"><b style="color:var(--ok)">Да</b><ul class="list" style="margin-top:10px">
+      <li>Один тезис или одна цифра на макет</li>
+      <li>Вордмарк в одном и том же углу во всей серии</li>
+      <li>Поля не меньше 7% от ширины макета</li>
+      <li>Текст крупно: минимум 28px при ширине 1080</li>
+    </ul></div>
+    <div class="card dont"><b style="color:var(--warn)">Нет</b><ul class="list" style="margin-top:10px">
+      <li>Больше двух цветов на макете</li>
+      <li>Стоковые фото и коллажи</li>
+      <li>Текст поверх пёстрого фона без подложки</li>
+      <li>Эмодзи в макете (в подписи к посту — можно)</li>
+    </ul></div>
+  </div>
+
+  <h3>Размеры</h3>
+  <div class="card">
+    <table>
+      <tr><th>Формат</th><th>Размер</th><th>Где</th></tr>
+      <tr><td>Аватар</td><td><code>1000 × 1000</code></td><td>Все площадки</td></tr>
+      <tr><td>Пост квадрат</td><td><code>1080 × 1080</code></td><td>Лента</td></tr>
+      <tr><td>Пост вертикальный</td><td><code>1080 × 1350</code></td><td>Лента, максимум площади</td></tr>
+      <tr><td>Сторис и Reels</td><td><code>1080 × 1920</code></td><td>Вертикальный вариант лого</td></tr>
+      <tr><td>Обложка сообщества</td><td><code>1590 × 530</code></td><td>ВКонтакте</td></tr>
+      <tr><td>Превью статьи</td><td><code>1200 × 630</code></td><td>Telegram, репосты</td></tr>
+    </table>
+    <p class="note">Безопасная зона в сторис: 250px сверху и 320px снизу — там интерфейс площадки. Вордмарк и ключевой текст туда не заходят.</p>
   </div>
 </section>
 
