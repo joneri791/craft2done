@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craft2Done — Brandbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#000;--s1:#0E0D11;--s2:#151318;--s3:#1D1A22;
+  --line:rgba(255,255,255,.16);--line2:rgba(255,255,255,.09);
+  --p:#A100FF;--p2:#7500C0;--p3:#460073;--pd:#26003D;
+  --lav:#DCAFFF;--lav2:#EFE2FF;--blue:#43B4FF;--paper:#F7F5F2;
+  --ok:#34D399;--warn:#F87171;
+  --t:#fff;--t2:rgba(255,255,255,.74);--t3:rgba(255,255,255,.5);--t4:rgba(255,255,255,.32);
+  --f:'Inter Tight',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+@media(max-width:640px){.wrap{padding:0 20px}}
+a{color:inherit}
+
+.tocbar{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.84);backdrop-filter:blur(18px);border-bottom:1px solid var(--line2)}
+.tocbar .wrap{display:flex;gap:18px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.tocbar a{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--t3);text-decoration:none;transition:color .2s}
+.tocbar a:hover{color:var(--p)}
+
+header.top{padding:88px 0 54px;border-bottom:1px solid var(--line2)}
+.logo{font-size:clamp(40px,7vw,72px);font-weight:900;letter-spacing:-.035em;line-height:1}
+.logo em{font-style:normal;color:var(--p)}
+.sub{color:var(--t3);font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin-top:16px}
+.intro{color:var(--t2);max-width:640px;margin-top:22px;font-size:16px}
+
+section{padding:66px 0;border-bottom:1px solid var(--line2)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--t3);margin-bottom:10px}
+.eyebrow::before{content:'// ';color:var(--p)}
+h2{font-size:clamp(24px,3.2vw,38px);font-weight:800;letter-spacing:-.025em;margin-bottom:10px}
+h3{font-size:15px;font-weight:700;letter-spacing:.02em;margin:26px 0 12px;color:var(--t)}
+.lead{color:var(--t2);max-width:660px;margin-bottom:30px}
+p.note{color:var(--t3);font-size:13.5px;margin-top:12px}
+
+.grid{display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}
+@media(max-width:860px){.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.g4,.g3,.g2{grid-template-columns:1fr}}
+
+.card{border:1px solid var(--line2);border-radius:14px;padding:22px 24px;background:var(--s1)}
+.sw{border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--s1)}
+.sw .chip{height:92px}
+.sw .meta{padding:12px 14px}
+.sw b{display:block;font-size:13.5px}
+.sw span{display:block;font-family:ui-monospace,monospace;font-size:11.5px;color:var(--t3);margin-top:3px}
+.sw i{display:block;font-style:normal;font-size:11.5px;color:var(--t4);margin-top:6px;line-height:1.45}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{color:var(--t3);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+code{font-family:ui-monospace,monospace;font-size:12px;color:var(--lav)}
+
+.type-row{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;padding:16px 0;border-top:1px solid var(--line2)}
+.type-row:first-child{border-top:0}
+.type-row .tag{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--t3);min-width:190px}
+
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;padding:14px 26px;border-radius:2px;transition:all .3s;text-decoration:none}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{background:var(--p2)}
+.btn-o{border:1px solid var(--line);color:#fff}.btn-o:hover{border-color:var(--p);color:var(--lav)}
+.pill{display:inline-flex;padding:6px 13px;border:1px solid var(--line);border-radius:999px;font-size:11.5px;font-weight:600;color:var(--t2)}
+.rule{width:44px;height:5px;background:var(--p);margin:6px 0 18px}
+.num-demo{font-size:96px;font-weight:800;letter-spacing:-.04em;line-height:.9;color:#0A0710;-webkit-text-stroke:1.6px rgba(161,0,255,.9);paint-order:stroke fill}
+.grad{background:linear-gradient(90deg,var(--p),var(--lav),#6C4BFF,var(--p));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.do{border-left:3px solid var(--ok);padding-left:16px}
+.dont{border-left:3px solid var(--warn);padding-left:16px}
+.list li{color:var(--t2);margin:9px 0;padding-left:18px;position:relative;font-size:14px;list-style:none}
+.list li::before{content:'→';position:absolute;left:0;color:var(--p)}
+.dont .list li::before{content:'×';color:var(--warn)}
+.do .list li::before{content:'✓';color:var(--ok)}
+
+.spec{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--line2);flex-wrap:wrap}
+.spec:last-child{border-bottom:0}
+.spec .k{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--t3);min-width:170px}
+.spec .v{font-size:14px;color:var(--t2);flex:1;min-width:220px}
+.bar{height:6px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;max-width:300px;width:100%}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--p),var(--lav));box-shadow:0 0 14px rgba(161,0,255,.7)}
+.prop{display:flex;height:46px;border-radius:8px;overflow:hidden;border:1px solid var(--line2)}
+.prop div{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:rgba(255,255,255,.7)}
+footer{padding:52px 0 70px;color:var(--t4);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav class="tocbar"><div class="wrap">
+  <a href="#idea">Идея</a><a href="#logo">Логотип</a><a href="#color">Цвет</a><a href="#type">Типографика</a>
+  <a href="#layout">Сетка</a><a href="#ui">Компоненты</a><a href="#graphics">Графика</a>
+  <a href="#motion">Анимация</a><a href="#voice">Тон</a><a href="#apply">Носители</a><a href="#tech">Техничка</a>
+</div></nav>
+
+<div class="wrap">
+
+<header class="top">
+  <div class="logo">craft<em>2</em>done</div>
+  <div class="sub">Brand Guidelines · v2 · 2026</div>
+  <p class="intro">Craft2Done — digital-маркетинг, собранный как система. Бренд говорит языком инженерии роста: тёмная сцена, фиолетовый акцент, крупная плотная типографика и спокойная точная анимация. Ничего лишнего — только то, что объясняет результат.</p>
+</header>
+
+<!-- ИДЕЯ -->
+<section id="idea">
+  <div class="eyebrow">00 · Платформа бренда</div>
+  <h2>Что стоит за названием</h2>
+  <p class="lead">craft <b style="color:var(--p)">2</b> done — «довести до результата». Цифра «2» читается как «to» и держит всю идею: между ремеслом и результатом есть путь, и мы отвечаем за весь путь, а не за отдельный этап.</p>
+
+  <div class="grid g3">
+    <div class="card"><h3 style="margin-top:0">Обещание</h3><p class="note">Превращаем разрозненный маркетинг в управляемую систему: реклама, контент, аналитика и CRM работают на одну метрику.</p></div>
+    <div class="card"><h3 style="margin-top:0">Чем отличаемся</h3><p class="note">Показываем механику, а не результат «в вакууме»: гипотеза → тест → цифра → следующий шаг. Клиент видит логику, а не отчёт-заглушку.</p></div>
+    <div class="card"><h3 style="margin-top:0">Кому</h3><p class="note">Бизнесу, который уже пробовал подрядчиков и хочет прозрачности: где буксует рост и что с этим делать по неделям.</p></div>
+  </div>
+
+  <h3>Принципы дизайна</h3>
+  <ul class="list">
+    <li><b>Тишина вокруг главного.</b> Один акцент на экран, остальное — фон и воздух</li>
+    <li><b>Крупно и плотно.</b> Заголовок работает как объект, а не как строка текста</li>
+    <li><b>Движение объясняет.</b> Анимация показывает структуру и порядок, а не украшает</li>
+    <li><b>Скорость — часть эстетики.</b> Лагающий сайт нарушает бренд так же, как кривой логотип</li>
+  </ul>
+</section>
+
+<!-- ЛОГОТИП -->
+<section id="logo">
+  <div class="eyebrow">01 · Логотип</div>
+  <h2>Вордмарк</h2>
+  <p class="lead">Основной знак — текстовый: <b>craft2done</b>, строчными, слитно, без пробелов. Цифра «2» всегда акцентная и читается как «to». Это смысловое ядро бренда — путь от задачи к результату.</p>
+
+  <div class="grid g3">
+    <div class="card"><div style="font-size:30px;font-weight:900;letter-spacing:-.03em">craft<em style="font-style:normal;color:var(--p)">2</em>done</div><p class="note">Основной — на тёмном</p></div>
+    <div class="card" style="background:var(--paper);border-color:#ddd"><div style="font-size:30px;font-weight:900;letter-spacing:-.03em;color:#111">craft<em style="font-style:normal;color:var(--p)">2</em>done</div><p class="note" style="color:#777">Инверсия — на светлом</p></div>
+    <div class="card"><div style="font-size:30px;font-weight:900;letter-spacing:-.03em">craft<em style="font-style:normal">2</em>done</div><p class="note">Моно — когда цвет недоступен</p></div>
+  </div>
+
+  <h3>Построение и охранное поле</h3>
+  <div class="card">
+    <div class="spec"><span class="k">Начертание</span><span class="v">Inter Tight, Black 900 (в интерфейсе допустимо 800)</span></div>
+    <div class="spec"><span class="k">Трекинг</span><span class="v"><code>letter-spacing: −0.03em</code></span></div>
+    <div class="spec"><span class="k">Охранное поле</span><span class="v">не менее высоты строчной «o» со всех сторон</span></div>
+    <div class="spec"><span class="k">Мин. размер</span><span class="v">16px на экране / 12 мм в печати</span></div>
+    <div class="spec"><span class="k">Регистр</span><span class="v">всегда строчные; «2» не заменяется на «to» в написании знака</span></div>
+    <div class="spec"><span class="k">Соразмерность</span><span class="v">в шапке высота вордмарка выравнивается по высоте кнопки «Заявка»</span></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card do"><b style="color:var(--ok)">Можно</b><ul class="list" style="margin-top:10px">
+      <li>Ставить на чёрном, белом или на фото с затемнением от 55%</li>
+      <li>Использовать моно-версию в один цвет</li>
+      <li>Масштабировать строго пропорционально</li>
+      <li>Брать «2» отдельно как минимальный знак — фавикон, аватар, печать</li>
+    </ul></div>
+    <div class="card dont"><b style="color:var(--warn)">Нельзя</b><ul class="list" style="margin-top:10px">
+      <li>Разбивать на строки и добавлять пробелы: «craft 2 done»</li>
+      <li>Менять цвет «2» на любой, кроме фиолетового или моно</li>
+      <li>Наклонять, растягивать, добавлять тень, свечение, обводку</li>
+      <li>Ставить на пёстрый фон без подложки</li>
+      <li>Писать с заглавной в интерфейсе — «Craft2Done» только в текстах и документах</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ЦВЕТ -->
+<section id="color">
+  <div class="eyebrow">02 · Цвет</div>
+  <h2>Палитра</h2>
+  <p class="lead">Ядро — насыщенный фиолетовый на глубоком чёрном. Лаванда и синий работают как вторичные акценты в градиентах и данных. Светлая «бумага» — для печати и инверсных материалов.</p>
+
+  <h3>Основные</h3>
+  <div class="grid g4">
+    <div class="sw"><div class="chip" style="background:#A100FF"></div><div class="meta"><b>Primary Purple</b><span>#A100FF</span><i>Акцент, кнопки, «2», активные состояния</i></div></div>
+    <div class="sw"><div class="chip" style="background:#7500C0"></div><div class="meta"><b>Purple 700</b><span>#7500C0</span><i>Ховер, градиенты, свечения</i></div></div>
+    <div class="sw"><div class="chip" style="background:#460073"></div><div class="meta"><b>Purple 900</b><span>#460073</span><i>Глубина, фоновые пятна</i></div></div>
+    <div class="sw"><div class="chip" style="background:#DCAFFF"></div><div class="meta"><b>Lavender</b><span>#DCAFFF</span><i>Цифры KPI, акцентный мелкий текст</i></div></div>
+  </div>
+
+  <h3>Поверхности и текст</h3>
+  <div class="grid g4">
+    <div class="sw"><div class="chip" style="background:#000;border-bottom:1px solid var(--line2)"></div><div class="meta"><b>Base Black</b><span>#000000</span><i>Основной фон</i></div></div>
+    <div class="sw"><div class="chip" style="background:#0E0D11"></div><div class="meta"><b>Surface 1</b><span>#0E0D11</span><i>Карточки, панели</i></div></div>
+    <div class="sw"><div class="chip" style="background:#151318"></div><div class="meta"><b>Surface 2</b><span>#151318</span><i>Ховер карточек, вложенные блоки</i></div></div>
+    <div class="sw"><div class="chip" style="background:#F7F5F2"></div><div class="meta"><b>Paper</b><span>#F7F5F2</span><i>Инверсия, печать, презентации</i></div></div>
+  </div>
+
+  <h3>Вспомогательные</h3>
+  <div class="grid g4">
+    <div class="sw"><div class="chip" style="background:#43B4FF"></div><div class="meta"><b>Accent Blue</b><span>#43B4FF</span><i>Данные, вторая линия графика</i></div></div>
+    <div class="sw"><div class="chip" style="background:#34D399"></div><div class="meta"><b>Success</b><span>#34D399</span><i>Рост, положительная дельта</i></div></div>
+    <div class="sw"><div class="chip" style="background:#F87171"></div><div class="meta"><b>Alert</b><span>#F87171</span><i>Ошибки форм, риск</i></div></div>
+    <div class="sw"><div class="chip" style="background:linear-gradient(90deg,#A100FF,#DCAFFF,#6C4BFF,#A100FF)"></div><div class="meta"><b>Brand Gradient</b><span>90° · 4 стопа</span><i>Полосы прогресса, акценты в заголовках</i></div></div>
+  </div>
+  <p class="note"><code>linear-gradient(90deg, #A100FF, #DCAFFF, #6C4BFF, #A100FF)</code></p>
+
+  <h3>Пропорции использования</h3>
+  <div class="prop">
+    <div style="background:#000;flex:72">72% · фон</div>
+    <div style="background:#151318;flex:18">18% · поверхности</div>
+    <div style="background:#A100FF;flex:10;color:#fff">10% · акцент</div>
+  </div>
+  <p class="note">Фиолетовый — акцент, а не заливка больших плоскостей. Если его больше ~10% площади экрана, он перестаёт работать как акцент.</p>
+
+  <h3>Контраст и доступность</h3>
+  <div class="card">
+    <table>
+      <tr><th>Пара</th><th>Контраст</th><th>Применение</th></tr>
+      <tr><td>#FFFFFF на #000000</td><td><code>21:1</code></td><td>Заголовки, основной текст — AAA</td></tr>
+      <tr><td>белый 74% на #000000</td><td><code>~15:1</code></td><td>Body-текст — AAA</td></tr>
+      <tr><td>#DCAFFF на #000000</td><td><code>~11:1</code></td><td>Цифры, акцентный текст — AAA</td></tr>
+      <tr><td>#A100FF на #000000</td><td><code>~4:1</code></td><td>Только текст от 24px и графика; для мелкого — брать #DCAFFF</td></tr>
+      <tr><td>#FFFFFF на #A100FF</td><td><code>~5.2:1</code></td><td>Текст на кнопке — AA</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ТИПОГРАФИКА -->
+<section id="type">
+  <div class="eyebrow">03 · Типографика</div>
+  <h2 class="grad">Inter Tight</h2>
+  <p class="lead">Один шрифт на весь бренд. Заголовки — плотные и тяжёлые (800–900) с отрицательным трекингом, текст — спокойный (400–500) с широким интерлиньяжем. Этот контраст даёт инженерную подачу без украшательств.</p>
+
+  <div class="card">
+    <div class="type-row"><span class="tag">Hero · 800 · −.035em</span><span style="font-size:clamp(34px,5vw,64px);font-weight:800;letter-spacing:-.035em;line-height:.95">Растим заявки</span></div>
+    <div class="type-row"><span class="tag">Display · 800 · −.03em</span><span style="font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-.03em">Digital как система</span></div>
+    <div class="type-row"><span class="tag">H2 · 800 · −.025em</span><span style="font-size:30px;font-weight:800;letter-spacing:-.025em">Простая система роста</span></div>
+    <div class="type-row"><span class="tag">H3 · 700 · −.02em</span><span style="font-size:22px;font-weight:700;letter-spacing:-.02em">Аудит и точки роста</span></div>
+    <div class="type-row"><span class="tag">Body · 400 · 1.65</span><span style="font-size:16px;color:var(--t2);max-width:520px">Собираем рекламу, контент, аналитику и CRM в понятную систему роста.</span></div>
+    <div class="type-row"><span class="tag">Eyebrow · 700 · +.22em</span><span style="font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--t3)">услуги · процесс · кейсы</span></div>
+    <div class="type-row"><span class="tag">KPI · 800 · tabular</span><span style="font-size:40px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--lav)">+218%</span></div>
+  </div>
+
+  <h3>Размеры</h3>
+  <div class="card">
+    <table>
+      <tr><th>Стиль</th><th>Размер</th><th>Вес / трекинг / интерлиньяж</th><th>Где</th></tr>
+      <tr><td>Hero / H1</td><td><code>clamp(52px, 9.4vw, 150px)</code></td><td>800 · −0.035em · 0.92</td><td>Первый экран</td></tr>
+      <tr><td>Display</td><td><code>clamp(44px, 7.4vw, 110px)</code></td><td>800 · −0.03em · 0.96</td><td>CTA, крупные блоки</td></tr>
+      <tr><td>H2</td><td><code>clamp(34px, 4.6vw, 64px)</code></td><td>800 · −0.025em · 1.02</td><td>Заголовки секций</td></tr>
+      <tr><td>H3</td><td><code>23–30px</code></td><td>700 · −0.02em · 1.2</td><td>Карточки, шаги</td></tr>
+      <tr><td>Body</td><td><code>15–16px</code></td><td>400 · 0 · 1.65</td><td>Основной текст</td></tr>
+      <tr><td>Small</td><td><code>13–14px</code></td><td>400–600 · 0 · 1.5</td><td>Подписи, описания карточек</td></tr>
+      <tr><td>Eyebrow</td><td><code>11–12px</code></td><td>700 · +0.22em · UPPERCASE</td><td>Надзаголовки секций</td></tr>
+      <tr><td>Цифры KPI</td><td><code>26–44px</code></td><td>800 · −0.03em · tabular-nums</td><td>Метрики, кейсы</td></tr>
+      <tr><td>Кнопка</td><td><code>14–15px</code></td><td>600 · 0</td><td>Все действия</td></tr>
+    </table>
+  </div>
+
+  <h3>Правила набора</h3>
+  <ul class="list">
+    <li>Чем крупнее кегль — тем сильнее отрицательный трекинг, до −0.04em</li>
+    <li>Мелкий и капсовый текст — только с положительным трекингом (+0.16…+0.24em)</li>
+    <li>Цифры в метриках — <code>font-variant-numeric: tabular-nums</code>, чтобы не «прыгали» при анимации</li>
+    <li>Длина строки текста — максимум 60–70 знаков</li>
+    <li>Переносы в заголовках задаются через <code>max-width</code>, а не через <code>&lt;br&gt;</code></li>
+    <li>Капслок — только в надзаголовках и бегущей строке, никогда в основном тексте</li>
+  </ul>
+</section>
+
+<!-- СЕТКА -->
+<section id="layout">
+  <div class="eyebrow">04 · Сетка и отступы</div>
+  <h2>Структура</h2>
+  <div class="card">
+    <div class="spec"><span class="k">Контейнер</span><span class="v"><code>max-width: 1320px</code>; боковые поля 48px десктоп / 24px планшет / 18px мобайл</span></div>
+    <div class="spec"><span class="k">Колонки</span><span class="v">12-колоночная логика; типовые деления 1.25/0.75, 1.05/0.95, 1fr 1.15fr</span></div>
+    <div class="spec"><span class="k">Шаг отступов</span><span class="v"><code>4 · 8 · 12 · 14 · 18 · 22 · 26 · 34 · 44 · 60 · 90 · 130</code> px</span></div>
+    <div class="spec"><span class="k">Секция</span><span class="v">130px сверху и снизу на десктопе, 62px на мобайле</span></div>
+    <div class="spec"><span class="k">Радиусы</span><span class="v">кнопки 2px · карточки 12–16px · пилюли 999px · модалки 16px</span></div>
+    <div class="spec"><span class="k">Разделитель</span><span class="v">линия <code>rgba(255,255,255,.09)</code>, толщина 1px</span></div>
+    <div class="spec"><span class="k">Брейкпоинты</span><span class="v"><code>1100 · 1020 · 960 · 900 · 860 · 560 · 520</code> px</span></div>
+  </div>
+  <p class="note">Не более одной линии между блоками: ритм страницы задают отступы, а не рамки. Пустых полос между секциями быть не должно.</p>
+</section>
+
+<!-- КОМПОНЕНТЫ -->
+<section id="ui">
+  <div class="eyebrow">05 · Компоненты</div>
+  <h2>Интерфейс</h2>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">Кнопки</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+        <span class="btn btn-p">Обсудить проект</span>
+        <span class="btn btn-o">Смотреть услуги</span>
+      </div>
+      <p class="note">Основная — заливка #A100FF, ховер #7500C0. Вторичная — рамка 1px, на ховер рамка фиолетовеет, текст становится лавандовым. Углы почти прямые (2px). Стрелки внутри кнопок не используем.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Пилюли и теги</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+        <span class="pill">Аудит</span><span class="pill">CRO</span><span class="pill">ROI</span><span class="pill">Директ</span>
+      </div>
+      <p class="note">Скругление 999px, рамка 1px, текст 11.5px/600. Между пилюлями минимум 6px. Пилюля не кликабельна, если не ведёт в фильтр.</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3 style="margin-top:0">Карточка</h3>
+      <p class="note">Фон Surface 1, рамка 1px, радиус 12–16px, паддинг 26/24. На ховер — подъём −6px, фиолетовая рамка, сверху появляется полоса-акцент 2–3px. Внутри: номер, заголовок, одна-две строки описания, теги.</p>
+      <div class="rule" style="margin-top:16px"></div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Полосы прогресса</h3>
+      <div class="bar" style="margin-bottom:10px"><i style="width:64%"></i></div>
+      <div class="bar"><i style="width:22%"></i></div>
+      <p class="note">Высота 6px, трек — белый 10%, заливка — брендовый градиент со свечением. Заполнение всегда привязано к реальному прогрессу: загрузка, скролл секции, номер шага. Старт — всегда с нуля.</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3 style="margin-top:0">Кнопки-стрелки</h3>
+      <p class="note">Круг 44–48px, рамка 1px, иконка строго по оптическому центру. На ховер — фиолетовая рамка и заливка 9%. Используются только для листания карусели.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Модальные окна</h3>
+      <p class="note">Затемнение фона 70% с блюром, панель Surface 1, радиус 16px, ширина до 980px. Внутренняя область скроллится колесом, страница за ней зафиксирована. Закрытие — крестик и клик по фону.</p>
+    </div>
+  </div>
+
+  <h3>Состояния</h3>
+  <div class="card">
+    <table>
+      <tr><th>Состояние</th><th>Как выглядит</th></tr>
+      <tr><td>Hover</td><td>Подъём −2…−6px, фиолетовая рамка или заливка 9%, стрелка сдвигается на 10px</td></tr>
+      <tr><td>Active / выбран</td><td>Заливка #A100FF, текст белый</td></tr>
+      <tr><td>Disabled</td><td><code>opacity: .25</code>, <code>pointer-events: none</code></td></tr>
+      <tr><td>Focus</td><td>Обводка 1.5px #A100FF — не убирать, это доступность</td></tr>
+      <tr><td>Loading</td><td>Полоса прогресса под вордмарком, никаких спиннеров</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ГРАФИКА -->
+<section id="graphics">
+  <div class="eyebrow">06 · Графический язык</div>
+  <h2>Приёмы</h2>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-top:0">Контурные цифры</h3>
+      <div class="num-demo">04</div>
+      <p class="note">Крупные номера шагов — контуром, без заливки. Технически: заливка цветом фона + <code>-webkit-text-stroke: 1.6px</code> + <code>paint-order: stroke fill</code>. Последнее обязательно — иначе внутри жирных глифов проступают лишние линии на пересечениях контуров.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Фоновые свечения</h3>
+      <p class="note">Крупные размытые пятна фиолетового спектра: blur 42–56px, прозрачность 28–40%, поверх — тонкое статичное «зерно», которое убирает бандинг на градиентах.</p>
+      <p class="note"><b style="color:var(--warn)">Важно:</b> свечения статичные. Анимировать blur нельзя — это постоянная нагрузка на GPU, которая не прекращается даже в фоновой вкладке.</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3 style="margin-top:0">Бегущая строка</h3>
+      <p class="note">Названия платформ — контуром, uppercase, вес 800, разделитель — фиолетовая точка. Тот же приём <code>paint-order</code>, что и у цифр. Скорость реагирует на скролл, направление постоянное.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">3D-объект</h3>
+      <p class="note">Робот на первом экране — матовый тёмный пластик, следит за курсором. Низ уходит в фон мягкой маской, без жёсткого среза. Рендерится только на первом экране, паузится при уходе со сцены и при неактивной вкладке, на ширине до 1100px скрывается.</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h3 style="margin-top:0">Иконки</h3>
+      <p class="note">Линейные, толщина 1.5px, скруглённые концы, размер по сетке 24px. Заливок нет. Иконка не заменяет текст — только сопровождает.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Фотография</h3>
+      <p class="note">Если используется — тёмная, контрастная, с фиолетовым источником света. Обязательное затемнение под текст. Стоковых улыбающихся команд за ноутбуками — нет.</p>
+    </div>
+  </div>
+</section>
+
+<!-- АНИМАЦИЯ -->
+<section id="motion">
+  <div class="eyebrow">07 · Анимация</div>
+  <h2>Движение</h2>
+  <p class="lead">Плавно и сдержанно. Анимация объясняет структуру, а не развлекает: показывает связь, порядок и прогресс.</p>
+
+  <div class="card">
+    <table>
+      <tr><th>Параметр</th><th>Значение</th></tr>
+      <tr><td>Основная кривая</td><td><code>cubic-bezier(.16, 1, .3, 1)</code> — мягкий выход</td></tr>
+      <tr><td>Интерфейсная кривая</td><td><code>cubic-bezier(.22, .61, .36, 1)</code></td></tr>
+      <tr><td>Микро-взаимодействия</td><td>200–350 мс</td></tr>
+      <tr><td>Появление блоков</td><td>600–900 мс, каскад по 90 мс</td></tr>
+      <tr><td>Крупные сцены</td><td>1.0–1.5 с</td></tr>
+      <tr><td>Скролл страницы</td><td>Инерционный, lerp ≈ 0.12, без рывков</td></tr>
+    </table>
+  </div>
+
+  <h3>Фирменные паттерны</h3>
+  <ul class="list">
+    <li><b>Экран загрузки.</b> Вордмарк по центру, под ним полоса прогресса 6px; после заполнения — уход шторкой вверх</li>
+    <li><b>Разворот заголовка.</b> Строки поднимаются из перспективы с поворотом, каскадом</li>
+    <li><b>Смена слова.</b> Ключевое слово в заголовке меняется каждые 2.6 с со сдвигом и размытием</li>
+    <li><b>Залипающий скролл.</b> Секция фиксируется, вертикальная прокрутка листает карточки горизонтально, затем страница едет дальше — без обратного рывка</li>
+    <li><b>Пошаговое раскрытие.</b> Активный шаг увеличивается, трек заполняется по прогрессу</li>
+  </ul>
+
+  <h3>Производительность — часть бренда</h3>
+  <ul class="list">
+    <li>Никаких анимированных <code>blur</code> и теней на больших площадях</li>
+    <li>Тяжёлое (3D, канвасы) — только в зоне видимости, с паузой при уходе</li>
+    <li>При неактивной вкладке анимации ставятся на паузу</li>
+    <li>Уважать <code>prefers-reduced-motion</code>: движение выключается, содержимое остаётся</li>
+    <li>Ориентир — 60 fps на среднем ноутбуке без дискретной графики</li>
+  </ul>
+</section>
+
+<!-- ТОН -->
+<section id="voice">
+  <div class="eyebrow">08 · Тон коммуникации</div>
+  <h2>Как мы говорим</h2>
+  <p class="lead">Прямо, спокойно и с цифрами. Мы объясняем механику роста, а не продаём эмоции. Голос — партнёр-инженер: знает предмет, показывает данные, называет следующий шаг.</p>
+
+  <div class="grid g2">
+    <div class="card do"><b style="color:var(--ok)">Да</b><ul class="list" style="margin-top:10px">
+      <li>«Собираем рекламу, контент, аналитику и CRM в понятную систему роста»</li>
+      <li>Конкретика: CPL, CAC, ROI, сроки, что делаем на следующей неделе</li>
+      <li>Честно про ограничения и про то, что пока гипотеза</li>
+      <li>Короткие предложения, активные глаголы</li>
+    </ul></div>
+    <div class="card dont"><b style="color:var(--warn)">Нет</b><ul class="list" style="margin-top:10px">
+      <li>«Инновационные решения под ключ», «команда профессионалов»</li>
+      <li>Обещания результата без метрик и условий</li>
+      <li>Восклицательные знаки, капслок в тексте, эмодзи в интерфейсе</li>
+      <li>Длинные абзацы без единой цифры</li>
+    </ul></div>
+  </div>
+
+  <h3>Словарь</h3>
+  <div class="card">
+    <table>
+      <tr><th>Говорим</th><th>Не говорим</th></tr>
+      <tr><td>система роста</td><td>комплексное продвижение</td></tr>
+      <tr><td>гипотеза, проверка, вывод</td><td>эксперименты ради экспериментов</td></tr>
+      <tr><td>внедрено</td><td>реализовано, осуществлено</td></tr>
+      <tr><td>заявки и продажи</td><td>лиды и конверсии — в текстах для клиента</td></tr>
+      <tr><td>где буксует рост</td><td>болевые точки бизнеса</td></tr>
+    </table>
+  </div>
+
+  <h3>Микротексты</h3>
+  <div class="card">
+    <div class="spec"><span class="k">Кнопка-действие</span><span class="v">«Обсудить проект», «Оставить заявку», «Смотреть услуги»</span></div>
+    <div class="spec"><span class="k">После отправки</span><span class="v">«Заявка ушла. Ответим в течение рабочего дня»</span></div>
+    <div class="spec"><span class="k">Ошибка поля</span><span class="v">«Проверьте номер — не хватает цифр»</span></div>
+    <div class="spec"><span class="k">Пустое состояние</span><span class="v">«Пока пусто. Здесь появятся кейсы по этому направлению»</span></div>
+  </div>
+</section>
+
+<!-- НОСИТЕЛИ -->
+<section id="apply">
+  <div class="eyebrow">09 · Носители</div>
+  <h2>Применение</h2>
+  <div class="grid g3">
+    <div class="card"><h3 style="margin-top:0">Презентации</h3><p class="note">Чёрный фон, один тезис на слайд, крупная цифра как главный объект. Титул — вордмарк по центру и полоса-акцент. Светлая версия — на Paper с чёрным текстом.</p></div>
+    <div class="card"><h3 style="margin-top:0">Соцсети</h3><p class="note">Аватар — «2» на фиолетовом или белом. Обложки: чёрный фон, контурная цифра, короткий тезис. Не более двух цветов на макет.</p></div>
+    <div class="card"><h3 style="margin-top:0">Документы и КП</h3><p class="note">Paper-фон, Inter Tight, акцент только в заголовках и цифрах. Таблицы — без вертикальных линий, разделители 1px.</p></div>
+    <div class="card"><h3 style="margin-top:0">Письма</h3><p class="note">Одна колонка 600px, одна кнопка-действие. Подпись — вордмарк 20px и контакты в один ряд.</p></div>
+    <div class="card"><h3 style="margin-top:0">Видео</h3><p class="note">Тёмная сцена, фиолетовый источник света, финальный кадр — вордмарк по центру, снятый сверху. Длительность заставки — до 6 секунд.</p></div>
+    <div class="card"><h3 style="margin-top:0">Мерч и печать</h3><p class="note">Фиолетовый в CMYK ориентировочно 62/86/0/0, ближайший Pantone — 2592 C. На тёмном — шелкография белым, «2» фиолетовым.</p></div>
+  </div>
+</section>
+
+<!-- ТЕХНИЧКА -->
+<section id="tech">
+  <div class="eyebrow">10 · Техническая справка</div>
+  <h2>Токены</h2>
+  <div class="card">
+    <table>
+      <tr><th>Токен</th><th>Значение</th><th>Назначение</th></tr>
+      <tr><td><code>--p</code></td><td><code>#A100FF</code></td><td>Акцент бренда</td></tr>
+      <tr><td><code>--p2</code></td><td><code>#7500C0</code></td><td>Ховер, градиент</td></tr>
+      <tr><td><code>--lav</code></td><td><code>#DCAFFF</code></td><td>Цифры, акцентный текст</td></tr>
+      <tr><td><code>--bg</code></td><td><code>#000000</code></td><td>Фон</td></tr>
+      <tr><td><code>--s1 / --s2</code></td><td><code>#0E0D11 / #151318</code></td><td>Поверхности</td></tr>
+      <tr><td><code>--t / --t2 / --t3</code></td><td><code>#fff / 74% / 50%</code></td><td>Текст по уровням</td></tr>
+      <tr><td><code>--line2</code></td><td><code>rgba(255,255,255,.09)</code></td><td>Разделители</td></tr>
+      <tr><td><code>--f</code></td><td><code>'Inter Tight'</code></td><td>Шрифт</td></tr>
+      <tr><td><code>--easeOut</code></td><td><code>cubic-bezier(.16,1,.3,1)</code></td><td>Основная кривая</td></tr>
+    </table>
+  </div>
+
+  <h3>Адаптив</h3>
+  <div class="card">
+    <table>
+      <tr><th>Ширина</th><th>Поведение</th></tr>
+      <tr><td>больше 1100px</td><td>Полная версия: 3D-объект, залипающий скролл услуг, многоколоночные сетки</td></tr>
+      <tr><td>до 1100px</td><td>3D-объект скрыт</td></tr>
+      <tr><td>до 1020px</td><td>Меню сворачивается в бургер, залипающий скролл отключён</td></tr>
+      <tr><td>до 900px</td><td>Одна колонка, услуги — свайп-карусель 82vw, кнопки на всю ширину</td></tr>
+      <tr><td>до 520px</td><td>Уменьшенные заголовки, карточки 88vw, футер в одну колонку</td></tr>
+    </table>
+  </div>
+  <p class="note">Правило: мобильные стили живут только внутри media-запросов и никогда не переопределяют десктопные значения глобально.</p>
+
+  <h3>Чек-лист перед публикацией</h3>
+  <ul class="list">
+    <li>Один акцентный цвет на экран, доля фиолетового около 10%</li>
+    <li>Нет анимированных blur; вкладка в фоне не грузит процессор</li>
+    <li>Все цифры — tabular-nums, контурные — с <code>paint-order</code></li>
+    <li>Фокус-обводка не отключена, контраст мелкого текста не ниже 4.5:1</li>
+    <li>Отступы секций одинаковы, между блоками нет пустых полос</li>
+    <li>Проверено на 1440, 1280, 1024, 768 и 390 px</li>
+  </ul>
+</section>
+
+<footer>© 2026 Craft2Done · Brand Guidelines v2 · Inter Tight · #A100FF</footer>
+
+</div>
+</body>
+</html>
