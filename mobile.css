@@ -124,6 +124,13 @@ body{position:relative}
 #casesMore{width:100%;justify-content:center;margin-top:22px!important}
 
 
+/* ══════ 7.1 БЛОГ И СОБЫТИЯ ══════ */
+.blog-g{grid-template-columns:1fr;gap:30px;margin-top:30px}
+.soc{grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.soc-b{padding:16px 16px}
+.ev{padding:16px 16px;gap:16px}
+
+
 /* ══════ 8. ФОРМАТЫ ══════ */
 .fg{grid-template-columns:1fr;gap:12px}
 .fc{min-height:0;padding:22px 18px;border-radius:14px}

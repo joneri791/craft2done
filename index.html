@@ -655,6 +655,27 @@ html.lenis,html.lenis body{height:auto}
 .sc-end{flex:0 0 30vw;pointer-events:none}
 @media(max-width:1100px){.hero-robot{display:none}}
 
+/* ── блог и события ── */
+.blog-g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:44px}
+.soc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.soc-b{position:relative;display:flex;flex-direction:column;gap:4px;padding:20px 22px;border:1px solid var(--line2);border-radius:14px;background:var(--s1);text-decoration:none;transition:transform .3s var(--ease),border-color .3s,background .3s}
+.soc-b:hover{transform:translateY(-4px);border-color:rgba(161,0,255,.5);background:var(--s2)}
+.soc-b b{font-size:17px;font-weight:700;color:#fff}
+.soc-b span{font-size:12.5px;color:var(--t3)}
+.soc-b i{position:absolute;top:18px;right:20px;font-style:normal;color:var(--t3);transition:color .3s,transform .3s}
+.soc-b:hover i{color:var(--p);transform:translate(3px,-3px)}
+.ev-head{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--t3);margin-bottom:18px}
+.ev{position:relative;display:flex;align-items:center;gap:20px;padding:18px 22px;border:1px solid var(--line2);border-radius:14px;background:var(--s1);text-decoration:none;margin-bottom:12px;transition:transform .3s var(--ease),border-color .3s,background .3s}
+.ev:hover{transform:translateY(-4px);border-color:rgba(161,0,255,.5);background:var(--s2)}
+.ev-d{flex:0 0 auto;text-align:center;line-height:1;min-width:40px}
+.ev-d b{display:block;font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--lav)}
+.ev-d span{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--t3)}
+.ev-b{flex:1}
+.ev-b strong{display:block;font-size:16px;font-weight:600;color:#fff;margin-bottom:3px}
+.ev-b span{font-size:12.5px;color:var(--t3)}
+.ev>i{font-style:normal;color:var(--t3);transition:color .3s,transform .3s}
+.ev:hover>i{color:var(--p);transform:translate(3px,-3px)}
+
 /* Мобильные стили вынесены в отдельный файл mobile.css (подключён ниже).
    Он применяется только на ширине ≤900px и на десктоп не влияет. */
 </style>
@@ -774,6 +795,42 @@ html.lenis,html.lenis body{height:auto}
   <div class="rail-prog"><i id="railProg"></i></div>
 </div></section>
 <div id="mc"></div>
+
+<!-- БЛОГ И СОБЫТИЯ -->
+<section class="sec sec-line" id="blog" data-s="blog"><div class="wrap">
+  <div class="blog-g">
+    <div class="rv">
+      <span class="eyebrow">блог · сообщество</span>
+      <div class="rule"></div>
+      <h2 class="h1">Блог и события</h2>
+      <p class="lead" style="margin-top:16px">Разборы кейсов, гипотезы и цифры — коротко и по делу. Подписывайтесь на соцсети и приходите на встречи.</p>
+      <div class="soc">
+        <a class="soc-b" href="#" target="_blank" rel="noopener"><b>Telegram</b><span>разборы каждую неделю</span><i>↗</i></a>
+        <a class="soc-b" href="#" target="_blank" rel="noopener"><b>VK</b><span>кейсы и новости</span><i>↗</i></a>
+        <a class="soc-b" href="#" target="_blank" rel="noopener"><b>YouTube</b><span>видео и эфиры</span><i>↗</i></a>
+        <a class="soc-b" href="#" target="_blank" rel="noopener"><b>Дзен</b><span>лонгриды</span><i>↗</i></a>
+      </div>
+    </div>
+    <div class="rv" style="--st:1">
+      <div class="ev-head">Ближайшие события</div>
+      <a class="ev" href="#" target="_blank" rel="noopener">
+        <div class="ev-d"><b>14</b><span>авг</span></div>
+        <div class="ev-b"><strong>Вебинар: где буксует рост</strong><span>онлайн · 45 минут</span></div>
+        <i>↗</i>
+      </a>
+      <a class="ev" href="#" target="_blank" rel="noopener">
+        <div class="ev-d"><b>28</b><span>авг</span></div>
+        <div class="ev-b"><strong>Разбор рекламных кабинетов вживую</strong><span>онлайн · практикум</span></div>
+        <i>↗</i>
+      </a>
+      <a class="ev" href="#" target="_blank" rel="noopener">
+        <div class="ev-d"><b>11</b><span>сен</span></div>
+        <div class="ev-b"><strong>Митап digital-команды</strong><span>Москва · офлайн</span></div>
+        <i>↗</i>
+      </a>
+    </div>
+  </div>
+</div></section>
 
 <!-- CASES -->
 <section class="sec sec-line" id="cases" data-s="cases"><div class="wrap">
@@ -946,7 +1003,7 @@ initAnalytics();
 /* ═══ I18N DATA ═══ */
 const D={ru:{
 nav:[{h:'#about',t:'Подход'},{h:'#services',t:'Услуги'},{h:'#cases',t:'Кейсы'},{h:'#process',t:'Процесс'},{h:'#formats',t:'Форматы'},{h:'#contacts',t:'Контакты'}],nc:'Заявка',
-hh1:'Растим',hhRot:['бизнес','продажи','заявки','бренд'],hh2:'через digit<span class="gl">2</span>l',
+hh1:'Растим',hhRot:['бизнес','продажи','заявки','бренд'],hh2:'через digit<span class="gl">a</span>l',
 hs:'Craft → Done',
 hl:'Собираем рекламу, контент, аналитику и CRM в понятную систему роста. Видите, что делаем, зачем и как это влияет на заявки и продажи.',
 hb1:'Обсудить рост',hb2:'Смотреть услуги',
@@ -963,10 +1020,10 @@ edit:[
 ],
 vt:'подход',vti:'Простая система роста',vd:'Маркетинг должен быть понятным: где теряем людей, какие гипотезы проверяем, сколько стоит заявка и что делать на следующей неделе.',
 vals:[
- {i:'01',t:'Диагноз перед лечением',d:'Сначала находим узкие места: трафик, оффер, сайт, продажи, CRM.',det:'Аудит превращается в карту решений, а не в PDF ради PDF'},
+ {i:'01',t:'Диагностика',d:'Сначала находим узкие места: трафик, оффер, сайт, продажи, CRM.',det:'Аудит превращается в карту решений, а не в PDF ради PDF'},
  {i:'02',t:'Одна метрика — движение денег',d:'Клики и охваты важны только тогда, когда объясняют продажи.',det:'Каждая неделя привязана к KPI: CPL, CR, CAC, ROI'},
  {i:'03',t:'Малые ставки, быстрые проверки',d:'Не сжигаем бюджет на «веру в канал». Проверяем гипотезы короткими циклами.',det:'Слабые связки отключаем быстро, сильные масштабируем'},
- {i:'04',t:'Прозрачность без театра',d:'Клиент видит, что происходит: гипотезы, расходы, лиды, качество заявок.',det:'Отчёт показывает решения, а не красивую статистику'},
+ {i:'04',t:'Прозрачность',d:'Клиент видит, что происходит: гипотезы, расходы, лиды, качество заявок.',det:'Отчёт показывает решения, а не красивую статистику'},
  {i:'05',t:'Done значит внедрено',d:'Результат — это не презентация. Это работающая связка, которую можно повторять.',det:'Передаём систему, регламенты и точки роста'}
 ],
 st:'услуги',sti:'Digital-маркетинг полного цикла',sde:'Листайте или тяните карточки. Клик открывает окно с деталями, составом работ и референс-кейсом.',
@@ -1003,8 +1060,8 @@ pt:'процесс',procT:'Понятный путь от аудита до ро
 proc:[
 {n:'01',t:'Craft — Аудит',d:'Погружаемся в бизнес. Анализируем сайт, рекламу, конкурентов, воронку.',feats:[['Анализ сайта','Скорость, UX, конверсия'],['Аудит рекламы','Все кабинеты'],['Конкуренты','Позиции, стратегии'],['Воронка','От касания до продажи']],dur:'1–2 недели'},
 {n:'02',t:'Стратегия',d:'Стратегия с KPI, бюджетом и понедельным графиком.',feats:[['Каналы','Оптимальный микс'],['KPI','CPL, CPA, ROI — прогноз'],['Медиаплан','Понедельный'],['Бюджет','По каналам']],dur:'1 неделя'},
-{n:'03',t:'Запуск',d:'Настройка каналов, контент, аналитика. Еженедельная оптимизация.',feats:[['Настройка','Все системы'],['Контент','Креативы, тексты'],['A/B-тесты','Постоянно'],['Отчёты','Еженедельно']],dur:'непрерывно'},
-{n:'04',t:'Done',d:'Работающая система с отчётом по продажам и ROI.',feats:[['Отчёт','По продажам, не кликам'],['ROI','Прозрачный'],['Масштаб','Увеличение бюджета'],['Review','Ежеквартально']],dur:'ежемесячно + review'}
+{n:'03',t:'Запуск',d:'Настройка каналов, контент, аналитика. Еженедельная оптимизация.',feats:[['Настройка','Все системы'],['Контент','Креативы, тексты'],['A/B-тесты','Постоянно'],['Отчётность','']],dur:'непрерывно'},
+{n:'04',t:'Done',d:'Работающая система с отчётом по продажам и ROI.',feats:[['Отчёт','По продажам, не кликам'],['ROI','Прозрачный'],['Масштаб','Увеличение бюджета'],['Ревью','']],dur:'ежемесячно + ревью'}
 ],
 ft:'форматы',fti:'Формат под вашу стадию',fd:'Можно начать с разового проекта, подключить ежемесячное сопровождение или собрать полноценную growth-команду.',
 fmts:[
@@ -1038,7 +1095,7 @@ noteTg:'Заявка будет отправлена в Telegram.',noteMail:'Tel
 errName:'Укажите имя.',errEmail:'Укажите корректный email.',errService:'Выберите услугу.',errMsg:'Опишите задачу хотя бы в 10 символах.',errSend:'Не удалось отправить в Telegram. Проверьте настройки или используйте email.',sending:'Отправляем...'
 },en:{
 nav:[{h:'#about',t:'Approach'},{h:'#services',t:'Services'},{h:'#cases',t:'Cases'},{h:'#process',t:'Process'},{h:'#formats',t:'Formats'},{h:'#contacts',t:'Contact'}],nc:'Get started',
-hh1:'We grow',hhRot:['business','sales','leads','brands'],hh2:'through digit<span class="gl">2</span>l',
+hh1:'We grow',hhRot:['business','sales','leads','brands'],hh2:'through digit<span class="gl">a</span>l',
 hs:'Craft → Done',
 hl:'We assemble ads, content, analytics and CRM into a clear growth system. You see what we do, why, and how it moves leads and sales.',
 hb1:'Discuss growth',hb2:'View services',
@@ -1055,10 +1112,10 @@ edit:[
 ],
 vt:'approach',vti:'A simple growth system',vd:'Marketing should be clear: where we lose people, which hypotheses we test, what a lead costs and what to do next week.',
 vals:[
- {i:'01',t:'Diagnosis before treatment',d:'We find bottlenecks first: traffic, offer, site, sales, CRM.',det:'The audit becomes a decision map, not another PDF'},
+ {i:'01',t:'Diagnostics',d:'We find bottlenecks first: traffic, offer, site, sales, CRM.',det:'The audit becomes a decision map, not another PDF'},
  {i:'02',t:'One metric — money movement',d:'Clicks and reach matter only when they explain sales.',det:'Every week ties to CPL, CR, CAC and ROI'},
  {i:'03',t:'Small bets, fast proof',d:'We do not burn budget on faith in a channel. We test hypotheses in short cycles.',det:'Weak loops stop fast, strong loops scale'},
- {i:'04',t:'Transparent, not theatrical',d:'Clients see hypotheses, spend, leads and request quality.',det:'Reports explain decisions, not just numbers'},
+ {i:'04',t:'Transparency',d:'Clients see hypotheses, spend, leads and request quality.',det:'Reports explain decisions, not just numbers'},
  {i:'05',t:'Done means implemented',d:'A result is not a deck. It is a repeatable working system.',det:'We hand over the system, rules and next growth points'}
 ],
 st:'services',sti:'Full-cycle digital marketing',sde:'Scroll or drag the cards. Click opens a window with details, scope and a reference case.',
@@ -1095,8 +1152,8 @@ pt:'process',procT:'A clear path from audit to growth',
 proc:[
 {n:'01',t:'Craft — Audit',d:'We dive into your business. Site, ads, competitors, funnel.',feats:[['Site analysis','Speed, UX, conversion'],['Ads audit','All accounts'],['Competitors','Positions, strategies'],['Funnel','From touch to sale']],dur:'1–2 weeks'},
 {n:'02',t:'Strategy',d:'Strategy with KPIs, budget and a weekly schedule.',feats:[['Channels','Optimal mix'],['KPI','CPL, CPA, ROI forecast'],['Media plan','Weekly'],['Budget','Per channel']],dur:'1 week'},
-{n:'03',t:'Launch',d:'Channel setup, content, analytics. Weekly optimization.',feats:[['Setup','All systems'],['Content','Creatives, copy'],['A/B tests','Continuous'],['Reports','Weekly']],dur:'ongoing'},
-{n:'04',t:'Done',d:'A working system with a sales & ROI report.',feats:[['Report','Sales-focused'],['ROI','Transparent'],['Scale','Budget on winners'],['Review','Quarterly']],dur:'monthly + review'}
+{n:'03',t:'Launch',d:'Channel setup, content, analytics. Weekly optimization.',feats:[['Setup','All systems'],['Content','Creatives, copy'],['A/B tests','Continuous'],['Reporting','']],dur:'ongoing'},
+{n:'04',t:'Done',d:'A working system with a sales & ROI report.',feats:[['Report','Sales-focused'],['ROI','Transparent'],['Scale','Budget on winners'],['Review','']],dur:'monthly + review'}
 ],
 ft:'formats',fti:'A format for your stage',fd:'Start with a one-off project, add monthly support, or assemble a full growth team.',
 fmts:[
@@ -1189,7 +1246,7 @@ $('caseTools').innerHTML=types.map((x,i)=>`<button class="case-filter${i?'':' on
 $('cgg').innerHTML=d.cases.map((c,i)=>`<article class="cc rv" style="--st:${i%2}" data-type="${c.l}" data-cm="${i}" tabindex="0" role="button" aria-label="${c.t}"><div class="cc-top"><span class="cc-lab">${c.l}</span><span class="cc-open">${d.cm.open} <i>↗</i></span></div><div><h3>${c.t}</h3><div class="sub">${c.d}</div></div><div class="cc-m">${c.m.map(m=>`<div><b>${m[0]}</b><span>${m[1]}</span></div>`).join('')}</div><div class="cc-ba"><div><h5>${d.cm.before}</h5><ul>${c.b.slice(0,3).map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="aft"><h5>${d.cm.after}</h5><ul>${c.a.slice(0,3).map(x=>`<li>${x}</li>`).join('')}</ul></div></div></article>`).join('');
 // process
 $('pt').textContent=d.pt;
-$('pa').innerHTML=d.proc.map((p,i)=>`<div class="pstep${i===0?' on':''}" data-pi="${i}"><span class="k">${p.n} / 0${d.proc.length}</span><h4>${p.t}</h4><p>${p.d}</p><div class="pfg">${p.feats.map(f=>`<div class="pf"><strong>${f[0]}</strong><span>${f[1]}</span></div>`).join('')}</div><div class="dur">⏤ ${p.dur}</div></div>`).join('');
+$('pa').innerHTML=d.proc.map((p,i)=>`<div class="pstep${i===0?' on':''}" data-pi="${i}"><span class="k">${p.n} / 0${d.proc.length}</span><h4>${p.t}</h4><p>${p.d}</p><div class="pfg">${p.feats.map(f=>`<div class="pf"><strong>${f[0]}</strong>${f[1]?`<span>${f[1]}</span>`:''}</div>`).join('')}</div><div class="dur">⏤ ${p.dur}</div></div>`).join('');
 setProcStep(0,true);bindProc();
 // formats
 $('ft').textContent=d.ft;$('fti').textContent=d.fti;$('fd').textContent=d.fd;
