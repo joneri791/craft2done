@@ -584,7 +584,11 @@ body::-webkit-scrollbar-thumb{background:linear-gradient(#A100FF,#460073);border
 
 /* — pinned горизонтальный скролл услуг — */
 body.pm-pinned #services{padding:0}
-body.pm-pinned #services .pm-pin{position:sticky;top:0;padding:104px 0 60px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+body.pm-pinned #services .pm-pin{position:sticky;top:0;padding:78px 0 40px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+/* ужимаем услуги по вертикали (≈90%), чтобы на 100% масштабе была видна нижняя фиолетовая полоса */
+body.pm-pinned #services .rail-head{margin-bottom:26px}
+body.pm-pinned #services .sc{min-height:348px}
+body.pm-pinned #services .rail{padding-top:2px;padding-bottom:12px}
 
 /* — боковые въезды при скролле — */
 .rv.pm-l{transform:translateX(-90px)}
@@ -797,7 +801,7 @@ html.lenis,html.lenis body{height:auto}
 <div id="mc"></div>
 
 <!-- БЛОГ И СОБЫТИЯ -->
-<section class="sec sec-line" id="blog" data-s="blog"><div class="wrap">
+<section class="sec sec-line" id="blog" data-s="blog" data-label="Блог"><div class="wrap">
   <div class="blog-g">
     <div class="rv">
       <span class="eyebrow">блог · сообщество</span>
@@ -930,7 +934,7 @@ html.lenis,html.lenis body{height:auto}
   <div class="co-strip rv" id="contactStrip"></div>
 </div></section>
 
-<footer>
+<footer data-s="contacts" data-label="Контакты">
   <div class="ft-cells">
     <a class="ft-cell" href="mailto:hello@craft2done.ru"><b>Email</b><i>→</i></a>
     <a class="ft-cell" href="https://t.me/craft2done"><b>Telegram</b><i>→</i></a>
@@ -1696,31 +1700,40 @@ document.addEventListener('click',e=>{
 
 /* — стеклянный индикатор секций — */
 (function(){
-  const secs=[...document.querySelectorAll('[data-s]')];
-  if(!secs.length)return;
+  const all=[...document.querySelectorAll('[data-s]')];
+  if(!all.length)return;
   const box=document.createElement('div');box.className='pm-sec';box.setAttribute('aria-hidden','true');
   box.innerHTML='<em>01</em><i><span></span></i><b></b>';
   document.body.appendChild(box);
   const em=box.querySelector('em'),bar=box.querySelector('i span'),lab=box.querySelector('b');
   const labelFor=s=>{
+    if(s.dataset.label)return s.dataset.label;
     if(!s.id)return 'Craft2Done';
     const a=document.querySelector(`nav.desk a[href="#${s.id}"]`);
     return a?a.textContent:s.id;
   };
-  let raf=false;
-  addEventListener('scroll',()=>{
-    if(raf)return;raf=true;
-    requestAnimationFrame(()=>{
-      raf=false;
-      let idx=0;secs.forEach((s,i)=>{if(scrollY>=s.offsetTop-innerHeight*.45)idx=i});
-      const s=secs[idx];
-      const prog=Math.max(0,Math.min(1,(scrollY-s.offsetTop+innerHeight*.45)/Math.max(1,s.offsetHeight)));
-      em.textContent=String(idx+1).padStart(2,'0');
-      lab.textContent=labelFor(s);
-      bar.style.setProperty('--pp',(prog*100).toFixed(1)+'%');
-      box.classList.toggle('show',scrollY>innerHeight*.5);
-    });
-  },{passive:true});
+  let raf=false,curId=null;
+  function measure(){
+    raf=false;
+    /* только реально отрисованные секции; скрытые (display:none) пропускаем —
+       иначе индикатор залипает на них, т.к. у них offsetTop/rect = 0 */
+    const secs=all.filter(s=>s.offsetParent!==null);
+    if(!secs.length)return;
+    const mid=innerHeight*0.42;
+    let idx=0;
+    for(let i=0;i<secs.length;i++){ if(secs[i].getBoundingClientRect().top<=mid) idx=i; else break; }
+    const s=secs[idx];
+    if(s.id!==curId){ curId=s.id; em.textContent=String(idx+1).padStart(2,'0'); lab.textContent=labelFor(s); }
+    const r=s.getBoundingClientRect();
+    const prog=Math.max(0,Math.min(1,(mid-r.top)/Math.max(1,s.offsetHeight)));
+    bar.style.setProperty('--pp',(prog*100).toFixed(1)+'%');
+    box.classList.toggle('show',scrollY>innerHeight*.5);
+  }
+  function onScroll(){ if(raf)return;raf=true;requestAnimationFrame(measure); }
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
+  if(window.__lenis&&window.__lenis.on)window.__lenis.on('scroll',onScroll);
+  measure();
 })();
 
 /* — параллакс hero при скролле — */
